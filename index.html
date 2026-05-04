@@ -3,130 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation - Thara & Linda</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <title>លិខិតអញ្ជើញអាពាហ៍ពិពាហ៍ - ហួកាំង ថារ៉ា & ឃិន លិនដា</title>
+    <link href="https://fonts.googleapis.com/css2?family=Moul&family=Hanuman:wght@400;700&family=Freehand&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #c5a059;
-            --dark-red: #8B0000;
-            --cream: #fffdfa;
+            --ceremony-red: #990000;
+            --heritage-gold: #b38b3d;
+            --soft-cream: #fffcf5;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #fdf5e6;
             font-family: 'Hanuman', serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
-        .invitation-card {
-            background-color: var(--cream);
-            max-width: 450px;
-            width: 85%;
-            padding: 40px;
-            border: 8px double var(--gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            text-align: center;
-            position: relative;
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .header {
-            font-size: 1.1rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .names {
-            margin: 25px 0;
-        }
-
-        .groom, .bride {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-red);
-            display: block;
-        }
-
-        .and {
-            font-family: 'Freehand', cursive;
-            font-size: 2.2rem;
-            margin: 5px 0;
-            color: var(--gold);
-        }
-
-        .details {
-            border-top: 1px solid var(--gold);
-            border-bottom: 1px solid var(--gold);
-            padding: 20px 0;
-            margin: 25px 0;
-        }
-
-        .btn-map {
-            display: block;
+        .invitation-container {
+            background-color: var(--soft-cream);
+            max-width: 600px;
             width: 100%;
-            background-color: var(--gold);
-            color: white;
-            padding: 14px;
-            text-decoration: none;
-            border-radius: 5px;
+            padding: 60px 40px;
+            border: 12px double var(--heritage-gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .title-moul {
+            font-family: 'Moul', serif;
+            color: var(--ceremony-red);
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .parents-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .side-title {
+            font-family: 'Hanuman', serif;
             font-weight: bold;
-            border: none;
-            cursor: pointer;
+            color: var(--heritage-gold);
+            text-decoration: underline;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .ceremony-text {
             font-size: 1rem;
-            transition: 0.3s;
+            margin: 30px 0;
+            line-height: 1.8;
+            color: #222;
         }
 
-        .btn-map:hover {
-            background-color: #b08d4a;
+        .couple-container {
+            margin: 40px 0;
         }
 
-        .footer {
-            margin-top: 30px;
+        .couple-name {
+            font-family: 'Moul', serif;
+            font-size: 1.25rem;
+            color: var(--ceremony-red);
+            display: block;
+        }
+
+        .and-connector {
+            font-family: 'Freehand', cursive;
+            font-size: 2.5rem;
+            color: var(--heritage-gold);
+            margin: 10px 0;
+        }
+
+        .location-section {
+            border-top: 1px solid var(--heritage-gold);
+            border-bottom: 1px solid var(--heritage-gold);
+            padding: 20px 0;
+            margin: 40px 0;
+        }
+
+        .location-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: var(--ceremony-red);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Hanuman', serif;
+        }
+
+        .btn-link:hover {
+            background-color: #cc0000;
+        }
+
+        .blessing {
+            font-family: 'Moul', serif;
             font-size: 0.85rem;
-            color: #777;
-            font-style: italic;
+            color: var(--heritage-gold);
+            margin-top: 40px;
+        }
+
+        .ornament {
+            font-size: 1.5rem;
+            color: var(--heritage-gold);
         }
     </style>
 </head>
 <body>
 
-    <div class="invitation-card">
-        <div class="header">សូមគោរពអញ្ជើញចូលរួមពិសាភោជនាហារ</div>
-        
-        <div class="names">
-            <span class="groom">ខាងប្រុស៖ ហួកាំង ថារ៉ា</span>
-            <div class="and">&</div>
-            <span class="bride">ខាងស្រី៖ ឃិន លិនដា</span>
+    <div class="invitation-container">
+        <div class="ornament">៚</div>
+        <h1 class="title-moul">សេចក្តីជូនដំណឹង និងអញ្ជើញចូលរួមពិធីមង្គលការ</h1>
+
+        <div class="parents-grid">
+            <div>
+                <span class="side-title">មាតាបិតាខាងប្រុស</span>
+                លោក លោកស្រី<br>
+                បងប្អូន និងញាតិមិត្តទាំងអស់
+            </div>
+            <div>
+                <span class="side-title">មាតាបិតាខាងស្រី</span>
+                លោក លោកស្រី<br>
+                បងប្អូន និងញាតិមិត្តទាំងអស់
+            </div>
         </div>
 
-        <div class="details">
-            <strong>ទីកន្លែង៖</strong>
-            <span style="display: block; margin-top: 10px;">ភោជនីយដ្ឋាន ផ្កាយ ៥ (ហួ កាំង)</span>
+        <p class="ceremony-text">
+            មានកិត្តិយសសូមគោរពអញ្ជើញ <strong>ឯកឧត្តម លោកជំទាវ លោកអ្នកស្រី</strong><br>
+            ដើម្បីចូលរួមជាអធិបតី និងផ្តល់កិត្តិយសក្នុងពិធីពិសាភោជនាហារនៃអាពាហ៍ពិពាហ៍របស់កូនយើងខ្ញុំ៖
+        </p>
+
+        <div class="couple-container">
+            <span class="couple-name">កូនប្រុស៖ ហួកាំង ថារ៉ា</span>
+            <div class="and-connector">និង</div>
+            <span class="couple-name">កូនស្រី៖ ឃិន លិនដា</span>
         </div>
 
-        <button onclick="openLocation()" class="btn-map">មើលទីតាំងផែនទី</button>
-
-        <div class="footer">
-            <p>វត្តមានរបស់អស់លោកអ្នក គឺជាកិត្តិយសដ៏ខ្ពង់ខ្ពស់សម្រាប់គ្រួសារយើងខ្ញុំ។</p>
+        <div class="location-section">
+            <strong>កម្មវិធីរៀបចំឡើងនៅ៖</strong>
+            <span class="location-name">ភោជនីយដ្ឋាន ផ្កាយ ៥ ហួ កាំង</span>
         </div>
+
+        <button class="btn-link" onclick="openMap()">សូមចុចទីនេះដើម្បីមើលទីតាំង</button>
+
+        <div class="blessing">
+            សូមអរគុណ និងសូមគោរពអញ្ជើញ!
+        </div>
+        <div class="ornament" style="margin-top: 10px;">៚</div>
     </div>
 
     <script>
-        function openLocation() {
-            const url = "https://tharahuokaing.github.io/restaurant/?fbclid=IwdGRzaARluf9jbGNrBGW59mV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHvHOihxQKSPandz1m2Cvay5u0CZ4srjtcc_jmUVfeqDPgjxfznMih0fFluuY_aem_3TXmjQR3DKFSxhXgFd5Gxw";
-            window.open(url, '_blank');
+        function openMap() {
+            const locationUrl = "https://tharahuokaing.github.io/restaurant/?fbclid=IwdGRzaARluf9jbGNrBGW59mV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHvHOihxQKSPandz1m2Cvay5u0CZ4srjtcc_jmUVfeqDPgjxfznMih0fFluuY_aem_3TXmjQR3DKFSxhXgFd5Gxw";
+            window.open(locationUrl, '_blank');
         }
     </script>
 
