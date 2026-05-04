@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Thara & Linda</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark-red: #8B0000;
+            --cream: #fffdfa;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Hanuman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .invitation-card {
+            background-color: var(--cream);
+            max-width: 450px;
+            width: 85%;
+            padding: 40px;
+            border: 8px double var(--gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .header {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .names {
+            margin: 25px 0;
+        }
+
+        .groom, .bride {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-red);
+            display: block;
+        }
+
+        .and {
+            font-family: 'Freehand', cursive;
+            font-size: 2.2rem;
+            margin: 5px 0;
+            color: var(--gold);
+        }
+
+        .details {
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding: 20px 0;
+            margin: 25px 0;
+        }
+
+        .btn-map {
+            display: block;
+            width: 100%;
+            background-color: var(--gold);
+            color: white;
+            padding: 14px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-map:hover {
+            background-color: #b08d4a;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <div class="header">សូមគោរពអញ្ជើញចូលរួមពិសាភោជនាហារ</div>
+        
+        <div class="names">
+            <span class="groom">ខាងប្រុស៖ ហួកាំង ថារ៉ា</span>
+            <div class="and">&</div>
+            <span class="bride">ខាងស្រី៖ ឃិន លិនដា</span>
+        </div>
+
+        <div class="details">
+            <strong>ទីកន្លែង៖</strong>
+            <span style="display: block; margin-top: 10px;">ភោជនីយដ្ឋាន ផ្កាយ ៥ (ហួ កាំង)</span>
+        </div>
+
+        <button onclick="openLocation()" class="btn-map">មើលទីតាំងផែនទី</button>
+
+        <div class="footer">
+            <p>វត្តមានរបស់អស់លោកអ្នក គឺជាកិត្តិយសដ៏ខ្ពង់ខ្ពស់សម្រាប់គ្រួសារយើងខ្ញុំ។</p>
+        </div>
+    </div>
+
+    <script>
+        function openLocation() {
+            const url = "https://tharahuokaing.github.io/restaurant/?fbclid=IwdGRzaARluf9jbGNrBGW59mV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHvHOihxQKSPandz1m2Cvay5u0CZ4srjtcc_jmUVfeqDPgjxfznMih0fFluuY_aem_3TXmjQR3DKFSxhXgFd5Gxw";
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
