@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>លិខិតអញ្ជើញអាពាហ៍ពិពាហ៍ - ហួកាំង ថារ៉ា & ឃិន លីដា</title>
+    <link href="https://fonts.googleapis.com/css2?family=Moul&family=Hanuman:wght@400;700&family=Freehand&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ceremony-red: #800020; /* Deep Burgundy for a premium look */
+            --heritage-gold: #c5a059; /* Soft Metallic Gold */
+            --soft-cream: #fffdf9;
+            --text-dark: #2c2520;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7f1e3;
+            font-family: 'Hanuman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 15px;
+            color: var(--text-dark);
+        }
+
+        .invitation-container {
+            background-color: var(--soft-cream);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px 40px;
+            border: 3px solid var(--heritage-gold);
+            outline: 12px double var(--heritage-gold);
+            outline-offset: -20px;
+            box-shadow: 0 15px 50px rgba(139, 110, 61, 0.15);
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Decorative Traditional Graphic Containers */
+        .khmer-sticker-header {
+            width: 100%;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .khmer-sticker-header img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .khmer-sticker-footer {
+            width: 100%;
+            margin-top: 35px;
+            display: block;
+        }
+
+        .khmer-sticker-footer img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .title-moul {
+            font-family: 'Moul', serif;
+            color: var(--ceremony-red);
+            font-size: 1.4rem;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        }
+
+        .parents-section-title {
+            font-family: 'Moul', serif;
+            font-size: 0.95rem;
+            color: var(--ceremony-red);
+            margin-bottom: 20px;
+        }
+
+        .parents-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 35px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .side-title {
+            font-family: 'Hanuman', serif;
+            font-weight: bold;
+            color: var(--heritage-gold);
+            border-bottom: 1px dashed var(--heritage-gold);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .parent-names {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .ceremony-text {
+            font-size: 1.05rem;
+            margin: 35px 0;
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        .honorific-highlight {
+            font-weight: bold;
+            color: var(--ceremony-red);
+        }
+
+        .couple-container {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(197, 160, 89, 0.05);
+            border-radius: 8px;
+        }
+
+        .couple-label {
+            font-size: 0.9rem;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .couple-name {
+            font-family: 'Moul', serif;
+            font-size: 1.35rem;
+            color: var(--ceremony-red);
+            display: block;
+            margin-top: 5px;
+        }
+
+        .and-connector {
+            font-family: 'Freehand', cursive;
+            font-size: 3rem;
+            color: var(--heritage-gold);
+            margin: 5px 0;
+            line-height: 1;
+        }
+
+        .datetime-section {
+            margin: 35px 0;
+            padding: 15px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .datetime-title {
+            font-family: 'Moul', serif;
+            font-size: 1rem;
+            color: var(--ceremony-red);
+            margin-bottom: 10px;
+        }
+
+        .location-section {
+            background-color: rgba(128, 0, 32, 0.02);
+            border: 1px solid var(--heritage-gold);
+            padding: 25px 20px;
+            margin: 35px 0;
+            border-radius: 4px;
+        }
+
+        .location-title {
+            font-family: 'Moul', serif;
+            color: var(--ceremony-red);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .location-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: var(--ceremony-red);
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-family: 'Hanuman', serif;
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.2);
+        }
+
+        .btn-link:hover {
+            background-color: white;
+            color: var(--ceremony-red);
+            border: 2px solid var(--ceremony-red);
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.1);
+        }
+
+        .blessing {
+            font-family: 'Moul', serif;
+            font-size: 0.9rem;
+            color: var(--heritage-gold);
+            margin-top: 35px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 480px) {
+            .parents-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .invitation-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-container">
+        <!-- Decorative Traditional Header Banner Sticker -->
+        <div class="khmer-sticker-header">
+            <img src="https://github.com/tharahuokaing/wedding/blob/main/weeding.png?raw=true" alt="Decorative Traditional Header Sign">
+        </div>
+        
+        <h1 class="title-moul">សេចក្តីជូនដំណឹង និងអញ្ជើញចូលរួម<br>ក្នុងពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+
+        <h3 class="parents-section-title">យើងខ្ញុំជានាExtendedមាតាបិតា</h3>
+        <div class="parents-grid">
+            <div>
+                <span class="side-title">មាតាបិតាខាងប្រុស</span>
+                លោក <span class="parent-names">............................</span><br>
+                លោកស្រី <span class="parent-names">............................</span><br>
+                ព្រមទាំងបងប្អូន និងកូនចៅទាំងអស់
+            </div>
+            <div>
+                <span class="side-title">មាតាបិតាខាងស្រី</span>
+                លោក <span class="parent-names">............................</span><br>
+                លោកស្រី <span class="parent-names">............................</span><br>
+                ព្រមទាំងបងប្អូន និងកូនចៅទាំងអស់
+            </div>
+        </div>
+
+        <p class="ceremony-text">
+            មានកិត្តិយសសូមគោរពអញ្ជើញ <span class="honorific-highlight">ឯកឧត្តម លោកជំទាវ លោកអ្នកស្រី លោកឧកញ៉ា អ្នកឧកញ៉ា លោកអ្នកឧកញ៉ា</span> និងញាតិមិត្តជិតឆ្ងាយទាំងអស់ នៃគូស្វាមីភរិយាថ្មី<br>
+            ដើម្បីចូលរួមជាអធិបតីភាព និងផ្តល់កិត្តិយសដ៏ខ្ពង់ខ្ពស់ ក្នុងពិធីពិសាភោជនាហារ ដើម្បីជូនពរជ័យសិរីសួស្តី ក្នុងពិធីមង្គលការកូនប្រុស កូនស្រីរបស់យើងខ្ញុំ៖
+        </p>
+
+        <div class="couple-container">
+            <div class="couple-label">— កូនកំលោះ —</div>
+            <span class="couple-name">ហួកាំង ថារ៉ា</span>
+            <div class="and-connector">និង</div>
+            <div class="couple-label">— កូនក្រមុំ —</div>
+            <span class="couple-name">ឃិន លីដា</span>
+        </div>
+
+        <!-- Traditional Timing Schedule Section -->
+        <div class="datetime-section">
+            <div class="datetime-title">កាលបរិច្ឆេទកម្មវិធី</div>
+            <p style="margin: 5px 0; font-size: 1.05rem;">
+                ថ្ងៃ................ ទី....... ខែ............... ឆ្នាំ២០២៦<br>
+                (ត្រូវនឹងថ្ងៃ.......កើត/រោច ខែ............ ឆ្នាំខាល អដ្ឋស័ក ព.ស. ២៥70)
+            </p>
+        </div>
+
+        <div class="location-section">
+            <span class="location-title">កម្មវិធីរៀបចំឡើងនៅ៖</span>
+            <span class="location-name">ភោជនីយដ្ឋាន ផ្កាយ ៥ ហួ កាំង</span>
+            <span style="font-size: 0.95rem; color: #555; display:block; margin-top: 5px;">
+                (សាខាមុខកំពូល ខេត្តកណ្តាល ព្រះរាជាណាចក្រកម្ពុជា)
+            </span>
+        </div>
+
+        <button class="btn-link" onclick="openMap()">🗺️ សូមចុចទីនេះដើម្បីមើលទីតាំងផែនទី</button>
+
+        <div class="blessing">
+            វត្តមានដ៏ខ្ពង់ខ្ពស់របស់លោកអ្នក គឺជាកិត្តិយសដ៏ធំធេងសម្រាប់គ្រួសារយើងខ្ញុំ!<br>
+            សូមអរគុណ និងសូមគោរពអញ្ជើញដោយក្តីរាប់អាន!
+        </div>
+        
+        <!-- Decorative Traditional Footer Sticker -->
+        <div class="khmer-sticker-footer">
+            <!-- Swap the src attribute value below once your custom footer graphic asset is uploaded to GitHub -->
+            <img src="https://via.placeholder.com/650x250/800020/c5a059?text=%E1%9F%9A++Footer+Ornament++%E1%9F%9A" alt="Decorative Traditional Footer Sign">
+        </div>
+    </div>
+
+    <script>
+        function openMap() {
+            const locationUrl = "https://tharahuokaing.github.io/restaurant1/";
+            window.open(locationUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
