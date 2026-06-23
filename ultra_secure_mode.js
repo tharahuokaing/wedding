@@ -1,25 +1,3 @@
-// 🛡️ ULTRA SECURE MODE - BLOCK ALL DEV TOOLS
-    (function() {
-      // Block right-click
-      document.addEventListener('contextmenu', e => {
-        e.preventDefault(); e.stopImmediatePropagation();
-        document.body.innerHTML = '<div style="background:black;color:#f00;font-family:monospace;text-align:center;padding-top:30vh;font-size:2em;">🚫 ACCESS DENIED</div>';
-        return false;
-      });
-
-      // Block ALL dev shortcuts
-      document.addEventListener('keydown', e => {
-        const blocked = ['F12', 'F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11',
-                        'KeyI', 'KeyU', 'KeyS', 'KeyC'].includes(e.code) ||
-                       (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'i')) ||
-                       (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J'));
-        if (blocked) {
-          e.preventDefault(); e.stopImmediatePropagation();
-          document.title = '🚫 SECURE MODE ACTIVE';
-          return false;
-        }
-      }, true);
-
       // DevTools detection loop
       setInterval(() => {
         if (window.outerHeight - window.innerHeight > 200 || 
