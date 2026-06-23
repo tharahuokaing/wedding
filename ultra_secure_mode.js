@@ -28,8 +28,3 @@
           document.body.innerHTML = '<div style="background:#000;color:#f00;font-family:monospace;text-align:center;padding-top:30vh;font-size:3em;">🕵️ DEVELOPER TOOLS DETECTED<br>DATA TERMINATED</div>';
         }
       }, 500);
-
-      // Disable text selection
-      document.addEventListener('selectstart', e => e.preventDefault());
-      document.addEventListener('dragstart', e => e.preventDefault());
-    })();
