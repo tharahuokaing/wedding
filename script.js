@@ -10,25 +10,25 @@ function openMap() {
  * Toggles the visibility of the traditional wedding program timeline list container.
  */
 function toggleProgram() {
-    const timeline = document.getElementById('weddingTimeline');
+    const timeline = document.getElementById("weddingTimeline");
+    
     if (timeline) {
-        timeline.classList.toggle('collapsed');
+        // ពិនិត្យមើលថាតើវាមាន class 'collapsed' ឬអត់
+        if (timeline.classList.contains("collapsed")) {
+            // បើមាន គឺយកចេញដើម្បីឱ្យវាបង្ហាញ
+            timeline.classList.remove("collapsed");
+            timeline.style.display = "block"; // បង្ហាញ
+        } else {
+            // បើអត់មាន គឺបន្ថែមចូលដើម្បីលាក់វា
+            timeline.classList.add("collapsed");
+            timeline.style.display = "none"; // លាក់
+        }
     }
 }
 
-function toggleProgram() {
-    // រកទីតាំង element របស់ timeline
-    var timeline = document.getElementById("weddingTimeline");
-    
-    // ពិនិត្យមើលថាតើវាត្រូវបានបិទ (collapsed) ឬអត់
-    if (timeline.classList.contains("collapsed")) {
-        // បើបិទ ត្រូវដក class collapsed ចេញ ដើម្បីឱ្យវាបង្ហាញ
-        timeline.classList.remove("collapsed");
-        // បន្ថែម style បង្ហាញ (ក្នុងករណី css របស់អ្នកលាក់ដោយប្រើ display: none)
-        timeline.style.display = "block";
-    } else {
-        // បើវាបង្ហាញរួចហើយ គឺបិទវាវិញ
-        timeline.classList.add("collapsed");
-        timeline.style.display = "none";
-    }
+/**
+ * Scroll to top functionality
+ */
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
