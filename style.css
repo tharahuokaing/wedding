@@ -331,3 +331,15 @@ body {
         min-width: 95px;
     }
 }
+
+.scroll-controls {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.scroll-controls button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
