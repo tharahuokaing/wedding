@@ -331,3 +331,13 @@ body {
         min-width: 95px;
     }
 }
+
+/* ពេលដែលបិទ */
+.timeline-container.collapsed {
+    display: none;
+}
+
+/* ពេលដែលបើក (ដោយស្វ័យប្រវត្តិពី JavaScript) */
+.timeline-container {
+    display: block; /* ឬកែសម្រួលតាមការចង់បាន */
+}
