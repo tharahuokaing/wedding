@@ -8,6 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Moul&family=Hanuman:wght@400;700&family=Freehand&display=swap" rel="stylesheet">
     <!-- External Style Sheet -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra styling for scroll controls */
+        .scroll-controls {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .scroll-controls button {
+            margin: 5px;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .timeline-container {
+            max-height: 400px; /* limit height for scrolling */
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -66,7 +85,6 @@
                 <h4 class="timeline-main-title">
                     ⏱️ កម្មវិធីពិធីការតាមម៉ោងកំណត់ (Traditional Khmer Wedding - 3 Days, 3 Nights)
                 </h4>
-
                 <!-- Day 1 -->
                 <div class="timeline-item"><div class="time-badge">ថ្ងៃទី០១ (Day 01)</div></div>
                 <div class="timeline-item"><div class="time-badge">០៦:៣០ ព្រឹក</div><div class="timeline-content">ជួបជុំភ្ញៀវកិត្តិយស និងពិធីហែជំនូន (Dowry Procession)</div></div>
@@ -108,11 +126,14 @@
                 <div class="timeline-item"><div class="time-badge">១៨:០០ ល្ងាច</div><div class="timeline-content">ពិធីប្រកាសបើកភោគជនីដ្ឋាន និងបាញ់កាំជ្រួចអបអរសាទរ</div></div>
             </div>
         </div>
-        <div class="scroll-controls">
-            <button onclick="scrollUp()">⬆️ Scroll Up</button>
-            <button onclick="scrollDown()">⬇️ Scroll Down</button>
-        </div>
 
+            <!-- Scroll Controls -->
+            <div class="scroll-controls">
+                <button onclick="scrollUp()">⬆️ Scroll Up</button>
+                <button onclick="scrollDown()">⬇️ Scroll Down</button>
+            </div>
+        </div>
+    
         <div class="location-section">
             <span class="location-title">កម្មវិធីរៀបចំឡើងនៅ៖</span>
             <span class="location-name">ភោជនីយដ្ឋាន ផ្កាយ ៥ ហួ កាំង</span>
@@ -136,7 +157,18 @@
 
     <!-- External JavaScript File -->
     <script src="script.js"></script>
-    <script src="script1.js"></script>
     <script src="ultra_secure_mode.js"></script>
+
+    <!-- Scroll Functions -->
+    <script>
+        function scrollUp() {
+            const timeline = document.getElementById("weddingTimeline");
+            timeline.scrollBy({ top: -200, behavior: "smooth" });
+        }
+        function scrollDown() {
+            const timeline = document.getElementById("weddingTimeline");
+            timeline.scrollBy({ top: 200, behavior: "smooth" });
+        }
+    </script>
 </body>
 </html>
