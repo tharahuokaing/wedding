@@ -188,7 +188,7 @@ body {
     max-height: 1000px;
     opacity: 1;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.3s ease-in;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-in, padding 0.3s ease-in;
     margin-top: 25px;
     background: #fffefb;
     border: 1px solid rgba(197, 160, 89, 0.2);
@@ -196,6 +196,7 @@ body {
     padding: 20px;
     text-align: left;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+    display: block; /* Modified to respect JS display switching */
 }
 
 .timeline-container.collapsed {
@@ -204,6 +205,7 @@ body {
     padding: 0 20px;
     border: none;
     margin-top: 0;
+    display: none; /* Ensures it fully drops out of the layout flow when collapsed */
 }
 
 .timeline-main-title {
@@ -330,14 +332,4 @@ body {
     .time-badge {
         min-width: 95px;
     }
-}
-
-/* ពេលដែលបិទ */
-.timeline-container.collapsed {
-    display: none;
-}
-
-/* ពេលដែលបើក (ដោយស្វ័យប្រវត្តិពី JavaScript) */
-.timeline-container {
-    display: block; /* ឬកែសម្រួលតាមការចង់បាន */
 }
