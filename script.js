@@ -1,10 +1,3 @@
-Here is the fully revised `script.js` file.
-
-I have cleaned up the layout logic so it functions flawlessly with your style rules. When managing animations alongside class names like `.collapsed`, directly forcing `display: none` or `display: block` with inline styles can accidentally bypass smooth CSS transitions or cause modern grid elements to render weirdly.
-
-This version relies directly on CSS state toggling via classes, cleanly resolves potential quirks, and maintains your native Khmer annotations perfectly.
-
-```javascript
 /**
  * Opens the wedding reception venue location marker inside a new browser tab.
  */
@@ -15,13 +8,13 @@ function openMap() {
 
 /**
  * Toggles the visibility of the traditional wedding program timeline list container.
+ * Fully shows all list items instantly on screen layout when triggered.
  */
 function toggleProgram() {
     const timeline = document.getElementById("weddingTimeline");
     
     if (timeline) {
-        // ប្រើប្រាស់ classList.toggle ដើម្បីបន្ថែម ឬលុប class 'collapsed' ដោយស្វ័យប្រវត្តិ
-        // នេះជួយឱ្យ CSS Transition (max-height/opacity) ដំណើរការបានរលូនល្អ
+        // Toggles the class to instantly show or hide the absolute structural container height
         timeline.classList.toggle("collapsed");
     }
 }
@@ -46,5 +39,3 @@ window.addEventListener('scroll', function() {
         }
     }
 });
-
-```
