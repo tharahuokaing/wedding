@@ -7,27 +7,47 @@ function openMap() {
 }
 
 /**
- * Toggles the visibility of the traditional wedding program timeline list container.
- * Fully shows all list items instantly on screen layout when triggered.
+ * Toggles the visibility of the Khmer wedding program timeline list container.
  */
-function toggleProgram() {
-    const timeline = document.getElementById("weddingTimeline");
-    
-    if (timeline) {
-        // Toggles the class to instantly show or hide the absolute structural container height
-        timeline.classList.toggle("collapsed");
+function toggleProgramKh() {
+    const timelineKh = document.getElementById("weddingTimelineKh");
+    if (timelineKh) {
+        timelineKh.classList.toggle("collapsed");
     }
 }
 
 /**
- * Scroll to top functionality
+ * Toggles the visibility of the English wedding program timeline list container.
+ */
+function toggleProgramEn() {
+    const timelineEn = document.getElementById("weddingTimelineEn");
+    if (timelineEn) {
+        timelineEn.classList.toggle("collapsed");
+    }
+}
+
+/**
+ * Legacy toggle function (toggles both timelines if present, or single element ID).
+ */
+function toggleProgram() {
+    const timelineKh = document.getElementById("weddingTimelineKh");
+    const timelineEn = document.getElementById("weddingTimelineEn");
+    const timelineLegacy = document.getElementById("weddingTimeline");
+
+    if (timelineKh) timelineKh.classList.toggle("collapsed");
+    if (timelineEn) timelineEn.classList.toggle("collapsed");
+    if (timelineLegacy) timelineLegacy.classList.toggle("collapsed");
+}
+
+/**
+ * Smoothly scrolls the window view back to the top of the page.
  */
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
- * Monitor scrolling to display or hide the back-to-top button dynamically
+ * Monitors scroll position to display or hide the floating back-to-top button.
  */
 window.addEventListener('scroll', function() {
     const scrollTopBtn = document.getElementById('scrollTopBtn');
