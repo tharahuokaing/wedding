@@ -563,3 +563,137 @@ body {
         font-size: 1.3rem;
     }
 }
+
+/* ==========================================================================
+   Modern Interactive Program Toggle & Smooth Expansion Styles
+   ========================================================================== */
+
+/* Modern Glowing Toggle Button */
+.btn-program-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 22px;
+    margin: 18px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #8b0000 0%, #b8860b 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle Shimmer Hover Effect */
+.btn-program-toggle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg) translateY(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn-program-toggle:hover::before {
+    transform: rotate(30deg) translateY(100%);
+}
+
+.btn-program-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.35);
+}
+
+.btn-program-toggle:active {
+    transform: scale(0.98);
+}
+
+/* Animated Chevron/Icon indicator inside the button */
+.btn-program-toggle .toggle-icon {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-program-toggle.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Smooth Accordion Expansion Container */
+.timeline-container {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease-in-out,
+                visibility 0.4s ease-in-out,
+                margin 0.4s ease;
+    margin-top: 0;
+}
+
+/* Internal wrapper required for CSS Grid smooth height animation */
+.timeline-inner-wrapper {
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+/* Expanded State */
+.timeline-container:not(.collapsed),
+.timeline-container.expanded {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 15px;
+}
+
+/* Staggered Entrance Animation for Timeline Items */
+.timeline-container:not(.collapsed) .timeline-item,
+.timeline-container.expanded .timeline-item {
+    animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Item Delay Sequence */
+.timeline-container .timeline-item:nth-child(1) { animation-delay: 0.10s; }
+.timeline-container .timeline-item:nth-child(2) { animation-delay: 0.18s; }
+.timeline-container .timeline-item:nth-child(3) { animation-delay: 0.26s; }
+.timeline-container .timeline-item:nth-child(4) { animation-delay: 0.34s; }
+.timeline-container .timeline-item:nth-child(5) { animation-delay: 0.42s; }
+.timeline-container .timeline-item:nth-child(n+6) { animation-delay: 0.50s; }
+
+/* Timeline Entry Slide Animation Keyframes */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Card Container Modern Polish */
+.program-wrapper {
+    background: rgba(255, 253, 248, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(184, 134, 11, 0.25);
+    border-radius: 14px;
+    padding: 20px 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
