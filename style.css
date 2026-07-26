@@ -697,3 +697,123 @@ body {
     padding: 20px 18px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
+
+/**
+ * Opens the wedding reception venue location marker inside a new browser tab.
+ */
+function openMap() {
+    const locationUrl = "https://tharahuokaing.github.io/restaurant1/";
+    window.open(locationUrl, '_blank');
+}
+
+/**
+ * Syncs button active states and icon animations.
+ */
+function updateButtonState(buttonSelector, isExpanded) {
+    const btn = document.querySelector(buttonSelector);
+    if (btn) {
+        if (isExpanded) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    }
+}
+
+/**
+ * Toggles the visibility and modern animation of the Khmer program timeline.
+ */
+function toggleProgramKh() {
+    const timelineKh = document.getElementById("weddingTimelineKh");
+    const timelineEn = document.getElementById("weddingTimelineEn");
+
+    if (timelineKh) {
+        const isCollapsed = timelineKh.classList.contains("collapsed");
+        
+        if (isCollapsed) {
+            timelineKh.classList.remove("collapsed");
+            timelineKh.classList.add("expanded");
+        } else {
+            timelineKh.classList.add("collapsed");
+            timelineKh.classList.remove("expanded");
+        }
+
+        const isNowExpanded = !isCollapsed ? false : true;
+        updateButtonState(".btn-toggle-kh", isNowExpanded);
+
+        // Keep English column in sync if present
+        if (timelineEn) {
+            if (isNowExpanded) {
+                timelineEn.classList.remove("collapsed");
+                timelineEn.classList.add("expanded");
+            } else {
+                timelineEn.classList.add("collapsed");
+                timelineEn.classList.remove("expanded");
+            }
+            updateButtonState(".btn-toggle-en", isNowExpanded);
+        }
+    }
+}
+
+/**
+ * Toggles the visibility and modern animation of the English program timeline.
+ */
+function toggleProgramEn() {
+    const timelineEn = document.getElementById("weddingTimelineEn");
+    const timelineKh = document.getElementById("weddingTimelineKh");
+
+    if (timelineEn) {
+        const isCollapsed = timelineEn.classList.contains("collapsed");
+
+        if (isCollapsed) {
+            timelineEn.classList.remove("collapsed");
+            timelineEn.classList.add("expanded");
+        } else {
+            timelineEn.classList.add("collapsed");
+            timelineEn.classList.remove("expanded");
+        }
+
+        const isNowExpanded = !isCollapsed ? false : true;
+        updateButtonState(".btn-toggle-en", isNowExpanded);
+
+        // Keep Khmer column in sync if present
+        if (timelineKh) {
+            if (isNowExpanded) {
+                timelineKh.classList.remove("collapsed");
+                timelineKh.classList.add("expanded");
+            } else {
+                timelineKh.classList.add("collapsed");
+                timelineKh.classList.remove("expanded");
+            }
+            updateButtonState(".btn-toggle-kh", isNowExpanded);
+        }
+    }
+}
+
+/**
+ * Legacy toggle function to handle both containers simultaneously.
+ */
+function toggleProgram() {
+    toggleProgramKh();
+}
+
+/**
+ * Smoothly scrolls the window view back to the top of the page.
+ */
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/**
+ * Monitors scroll position to display or hide the floating back-to-top button dynamically.
+ */
+window.addEventListener('scroll', function() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (scrollTopBtn) {
+        if (window.scrollY > 300) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    }
+});
