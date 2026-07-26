@@ -356,3 +356,82 @@ body {
         padding-left: 15px;
     }
 }
+
+/* ==========================================================================
+   Dual Invitation Side-by-Side Grid Extension
+   ========================================================================== */
+
+/* Wrapper for side-by-side layout */
+.dual-invitation-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 15px;
+    align-items: start;
+}
+
+/* Ensure child invitation containers fill grid cells evenly */
+.dual-invitation-wrapper > .invitation-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0; /* Reset any existing auto margin */
+}
+
+/* Specific styling adjustments for the English side */
+#invitation-en {
+    font-family: 'Poppins', sans-serif, -apple-system, BlinkMacSystemFont;
+}
+
+#invitation-en .title-moul {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+#invitation-en .couple-name,
+#invitation-en .parent-names,
+#invitation-en .side-title {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Program Toggle Button Variants */
+.btn-toggle-kh,
+.btn-toggle-en {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Timeline smooth expansion behavior */
+.timeline-container {
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    overflow: hidden;
+}
+
+.timeline-container.collapsed {
+    display: none;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet & Smaller Screens: Stack invitations vertically */
+@media screen and (max-width: 1024px) {
+    .dual-invitation-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 700px;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+    .dual-invitation-wrapper {
+        padding: 0 10px;
+        margin: 10px auto;
+        gap: 25px;
+    }
+}
